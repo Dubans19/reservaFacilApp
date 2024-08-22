@@ -11,7 +11,7 @@ app.use(express.json())
 app.use(express.static('public'))
 app.use("/",authRouter)
 app.get("/traer",(req,res)=>{
-    res.json("traer")
+    res.json("endpoint prueba")
 })
 const PORT=3000
 app.listen(PORT,()=>console.log("Servidor en el puerto "  +  PORT))
