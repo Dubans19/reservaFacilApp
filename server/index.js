@@ -10,8 +10,8 @@ app.use(cors())
 app.use(express.json())
 app.use(express.static('public'))
 app.use("/",authRouter)
-app.get("/traer",(req,res)=>{
-    res.json("endpoint prueba")
+app.get("/prueba",(req,res)=>{
+    res.json("endpoint prueba nuevos")
 })
 const PORT=3000
 app.listen(PORT,()=>console.log("Servidor en el puerto "  +  PORT))
