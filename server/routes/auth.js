@@ -61,6 +61,7 @@ authRouter.post("/registrarse", async (req, res) => {
       apellido: apellido,
       email: email,
       contrasena: hashedpassword,
+      fecha_registro:new Date()
     });
     console.log("Document written with ID: ", docRef.id);
 
