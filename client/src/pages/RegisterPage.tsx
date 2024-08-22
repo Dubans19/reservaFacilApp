@@ -54,7 +54,7 @@ const RegisterPage = () => {
                 }
             }
 
-            const response = await fetch(`${import.meta.env.VITE_API_RESERVA_FACIL}/auth/registrarse`, {
+            const response = await fetch(`${import.meta.env.VITE_API_RESERVA_FACIL}/registrarse`, {
                 method: 'POST',
                 body: register_form,
             })

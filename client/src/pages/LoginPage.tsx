@@ -16,7 +16,7 @@ const LoginPage = () => {
     e.preventDefault()
 
     try {
-      const response = await fetch (`${import.meta.env.VITE_API_RESERVA_FACIL}/auth/iniciar-sesion`, {
+      const response = await fetch (`${import.meta.env.VITE_API_RESERVA_FACIL}/iniciar-sesion`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
