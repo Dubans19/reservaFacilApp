@@ -17,7 +17,7 @@
     gap: 15px;
     width: 40%;
     padding: 40px;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(253, 253, 253, 0.8);
     border-radius: 20px;
 
     @include lg {
@@ -42,14 +42,17 @@
         border-bottom: 1px solid rgba(255, 255, 255, 0.3);
         outline: none;
         text-align: center;
-        color: white;
+        color: rgb(239, 104, 7);
+        font-size: 15px;
+
 
         input:not(:placeholder-shown):focus {
           background: transparent; /* or background: none; */
         }
 
         &::placeholder {
-          color: white;
+          color: rgb(218, 114, 16);
+          font-size: 15px;
         }
       }
 
@@ -60,7 +63,7 @@
         align-items: center;
         gap: 9px;
         cursor: pointer;
-        color: white;
+        color: rgb(208, 140, 23);
         font-size: 14px;
 
         img {
@@ -82,7 +85,7 @@
 
     a {
       text-decoration: none;
-      color: white;
+      color: rgb(231, 168, 10);
       font-size: 13px;
       margin-top: 10px;
       text-align: center;

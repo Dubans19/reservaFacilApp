@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+
 import "../styles/Register.scss";
 import "../assets/uploadPhoto.png";
 import UploadIcon from "@mui/icons-material/Upload";
@@ -130,7 +131,7 @@ const RegisterPage = () => {
                     ></input>
 
                     <label htmlFor="image">
-                        <UploadIcon style={{ color: "white" }}></UploadIcon>
+                        <UploadIcon style={{ color: "orange" }}></UploadIcon>
                         <p>Sube tu foto</p>
                     </label>
                     {formData.imagenPerfil && (
