@@ -15,7 +15,7 @@ import { query, where } from "firebase/firestore";
 const authRouter = express.Router();
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb: null, "public/uploads/";
+    cb(null, "public/uploads/");
   },
   filename: function (req, file, cb) {
     cb(null, file.originalname);
@@ -23,16 +23,17 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage });
-authRouter.post("/registrarse", async (req, res) => {
+authRouter.post("/registrarse",upload.single('imagenPerfil'), async (req, res) => {
   try {
     const { nombre, apellido, email, contrasena } = req.body;
 
-    // const imagen_perfil=req.file
-    // if(!imagenPerfil){
-    // return res.status(400).send("No file upload")
-    // }
+    const imagenPerfil=req.file
+    console.log("imagen perfil es",imagenPerfil)
+    if(!imagenPerfil){
+    return res.status(400).send("No file upload")
+    }
 
-    // const imagenPerfilpath= imagenPerfil.path
+    const imagenPerfilpath= imagenPerfil.path
     let email_existe = false;
     const existinguser = query(
       collection(db, "registro"),
@@ -61,6 +62,7 @@ authRouter.post("/registrarse", async (req, res) => {
       apellido: apellido,
       email: email,
       contrasena: hashedpassword,
+      imagen_perfil:imagenPerfilpath,
       fecha_registro:new Date()
     });
     console.log("Document written with ID: ", docRef.id);
