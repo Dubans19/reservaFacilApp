@@ -3,8 +3,11 @@ import "../styles/Register.scss";
 import "../assets/uploadPhoto.png";
 import UploadIcon from "@mui/icons-material/Upload";
 import { useNavigate } from "react-router-dom";
+import Alert from '@mui/material/Alert';
+import CheckIcon from '@mui/icons-material/Check';
 const RegisterPage = () => {
     const navigate = useNavigate()
+    const [mostrarAlerta, setmostrarAlerta] = useState(false)
     const [formData, setformData] = useState({
         nombre: "",
         apellido: "",
@@ -28,7 +31,7 @@ const RegisterPage = () => {
     const [passwordMatch, setpasswordMatch] = useState(true)
     useEffect(() => {
         setpasswordMatch(formData.contrasena === formData.confirmarContrasena || formData.confirmarContrasena === "")
-    }, [])
+    })
     const handleSubmit = async (e: any) => {
         e.preventDefault()
 
@@ -55,7 +58,9 @@ const RegisterPage = () => {
                 body: register_form,
             })
             if (response.ok) {
+                // setmostrarAlerta(true)
                 navigate("/iniciar-sesion")
+                
             }
 
         } catch (error) {
@@ -67,6 +72,7 @@ const RegisterPage = () => {
     }
     return (
         <div className="register">
+            
             <h1>Registrarse ReservaFacil</h1>
             <div className="register_content">
 
@@ -137,6 +143,7 @@ const RegisterPage = () => {
                 </form>
                 <a href="/iniciar-sesion">Ya tienes una cuenta? Inicia sesion aquí</a>
             </div>
+   
         </div>
     );
 };
