@@ -30,7 +30,7 @@ authRouter.post("/registrarse",upload.single('imagenPerfil'), async (req, res) =
     const imagenPerfil=req.file
     console.log("imagen perfil es",imagenPerfil)
     if(!imagenPerfil){
-    return res.status(400).send("No file upload")
+    return res.status(400).send({mensage:"No hay una imagen subida",status:400})
     }
 
     const imagenPerfilpath= imagenPerfil.path
@@ -49,7 +49,7 @@ authRouter.post("/registrarse",upload.single('imagenPerfil'), async (req, res) =
       }
     });
     if (email_existe) {
-      return res.status(409).json({ message: "Email ya existe" });
+      return res.status(409).json({ mensage: "Email ya existe",status:409});
     }
     // if (!contrasena) {
     //     throw new Error("Password is required");
@@ -67,10 +67,10 @@ authRouter.post("/registrarse",upload.single('imagenPerfil'), async (req, res) =
     });
     console.log("Document written with ID: ", docRef.id);
 
-    res.status(200).json({ message: "Registro hecho con exito" });
+    res.status(200).json({ mensage: "Registro hecho con exito",status:200 });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ message: "Registro fallo" });
+    res.status(500).json({ mensage: "Registro fallo",status:500});
   }
 });
 
