@@ -11,16 +11,16 @@ const RegisterPage = () => {
         email: "",
         contrasena: "",
         confirmarContrasena: "",
-        imagenPerfil: null,
+        imagenPerfil: null as File | null,
     });
-    console.log(formData)
+    console.log(formData.imagenPerfil)
 
     const handleChange = (e: any) => {
         const { name, value, files } = e.target
         setformData({
             ...formData,
             [name]: value,
-            [name]: name === "imagenPerfil" ? files[0] : value
+            [name]: name === "imagenPerfil" ? files ? files[0] : null : value
         })
 
     }
@@ -46,7 +46,7 @@ const RegisterPage = () => {
             
                 // Omite el campo 'confirmarContrasena' y agrega los demás campos
                 if (key !== 'confirmarContrasena' && value !== null) {
-                    register_form.append(key, value.toString());
+                    register_form.append(key, value);
                 }
             }
 
