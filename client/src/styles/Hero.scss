@@ -1,0 +1,54 @@
+.hero {
+    position: relative;
+    padding: 60px 20px;
+    background-color: #fdf5f2;
+    height: 600px; /* Ajusta el tamaño según sea necesario */
+    text-align: center;
+    z-index: 100;
+  }
+  .buildings-svg {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%; /* Puedes ajustar el tamaño */
+    height: auto;
+    z-index: -1; /* Asegúrate de que el SVG esté detrás del contenido */
+  }
+  .hero h1 {
+    font-size: 48px;
+    margin: 0 0 20px;
+  }
+  
+  .hero p {
+    color: #666;
+    font-size: 18px;
+  }
+  
+  .hero span {
+    color: #ff7849;
+  }
+  
+  .search-bar {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    z-index: 150;
+  }
+  
+  .search-bar select, .search-bar input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 10px solid #ccc;
+  }
+  
+  .search-btn {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  

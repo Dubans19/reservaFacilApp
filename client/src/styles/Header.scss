@@ -1,0 +1,48 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fdf5f2;
+  }
+  
+  .logo h1 {
+    font-size: 24px;
+    color: #ff7849;
+    margin: 0;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+  }
+  
+  nav ul li {
+    margin-right: 20px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+  }
+  
+  .header-buttons {
+    display: flex;
+  }
+  
+  .login-btn, .add-listing-btn {
+    background: none;
+    border: 1px solid #ff7849;
+    color: #ff7849;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  
+  .add-listing-btn {
+    background-color: #ff7849;
+    color: white;
+  }
+  

@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fef7f3;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #fff8f6;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.logo span {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.menu li {
+    margin-right: 25px;
+    position: relative;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.menu li a span {
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+}
+
+.login-btn, .add-listing-btn {
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.login-btn {
+    color: #ff4605;
+    border: 1px solid #ff4605;
+    margin-right: 15px;
+}
+
+.login-btn .lock-icon {
+    margin-right: 5px;
+}
+
+.add-listing-btn {
+    background-color: #ff4605;
+    color: white;
+}
+
+.add-listing-btn span {
+    margin-left: 10px;
+}

@@ -15,7 +15,6 @@ const firebaseConfig = {
   storageBucket: process.env.firebasestorageBucket,
   messagingSenderId: process.env.firebasemessagingSenderId,
   appId: process.env.firebaseappId,
-  measurementId: process.env.firebasemeasurementId
 };
 
 
