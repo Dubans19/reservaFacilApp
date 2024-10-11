@@ -1,49 +1,41 @@
 import "../styles/Header.scss";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { useState } from "react";
 // import { RootState } from "../redux/store";
 
 const Header = () => {
   const user = useSelector((state) => state);
   console.log("user es", user); // Accediendo al estado del usuario
-  return (
-    <header className="header">
-      <div className="logo">
-        <h1>ReservaFacilApp</h1>
-      </div>
-      <nav>
-        <ul>
-          <li>
-            <a href="/">Dashboard</a>
-          </li>
-          <li>
-            <a href="/">Home</a>
-          </li>
-          <li>
-            <a href="/">Listing</a>
-          </li>
-          <li>
-            <a href="/">Pages</a>
-          </li>
-          <li>
-            <a href="/">Blog</a>
-          </li>
-        </ul>
-      </nav>
-      <div className="header-buttons">
-        {user.user == null ? (
-          <Link to="/iniciar-sesion">
-            <button className="login-btn">Iniciar Sesion</button>
-          </Link>
-        ) : (
-          <p>Bienvenido {user.user.email} </p>
-        )}
+  const [isOpen, setIsOpen] = useState(false);
 
-        {user.user == null ? null : (
-          <button className="add-listing-btn">Add Listing</button>
-        )}
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  return (
+    <nav className="navbar">
+      <div className="logo">
+       <Link to="/"><h1>ReservaFacil</h1></Link> 
       </div>
-    </header>
+      <ul className={`nav-links ${isOpen ? 'open' : ''}`}>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Lista de propiedades</a></li>
+        <li><a href="#">Paginas</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+      <div className="nav-buttons">
+        {user.user==null ?        <Link to="/iniciar-sesion"><button className="login-btn">Iniciar sesión</button></Link>: <p>{user.user.nombre}</p>}
+        {user.user==null ?               null
+: <button className="add-listing-btn">Dashboard</button>}
+
+      </div>
+      <div className="hamburger" onClick={toggleMenu}>
+        <span className="bar"></span>
+        <span className="bar"></span>
+        <span className="bar"></span>
+      </div>
+    </nav>
   );
 };
 

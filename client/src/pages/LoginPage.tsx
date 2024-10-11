@@ -39,6 +39,7 @@ const LoginPage = () => {
       }
 
     } catch (err) {
+      alert("fallo")
       console.log("Login failed", err)
     }
   }

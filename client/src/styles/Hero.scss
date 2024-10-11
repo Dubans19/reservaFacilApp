@@ -1,54 +1,74 @@
 .hero {
-    position: relative;
-    padding: 60px 20px;
-    background-color: #fdf5f2;
-    height: 600px; /* Ajusta el tamaño según sea necesario */
+    background-color: #fff7f1;
+    padding: 4rem 2rem; /* Ajuste de padding para más espacio */
     text-align: center;
-    z-index: 100;
-  }
-  .buildings-svg {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%; /* Puedes ajustar el tamaño */
-    height: auto;
-    z-index: -1; /* Asegúrate de que el SVG esté detrás del contenido */
-  }
-  .hero h1 {
-    font-size: 48px;
-    margin: 0 0 20px;
+    position: relative;
+    height: 89vh; /* Ajuste de altura para ser más largo */
+    overflow: hidden;
   }
   
-  .hero p {
-    color: #666;
-    font-size: 18px;
+  .hero-content {
+    position: relative;
+    z-index: 1;
   }
   
-  .hero span {
-    color: #ff7849;
+  .hero-content h1 {
+    font-size: 2.5rem;
+    color: #333;
   }
   
-  .search-bar {
-    margin-top: 30px;
+  .underline {
+    color: #ff6f3d;
+    text-decoration: underline;
+  }
+  
+  .search-form {
+    margin-top: 2rem;
     display: flex;
     justify-content: center;
-    gap: 10px;
-    z-index: 150;
+    gap: 1rem;
   }
   
-  .search-bar select, .search-bar input {
-    padding: 10px;
+  .search-form select, .search-form input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
     border-radius: 5px;
-    border: 10px solid #ccc;
   }
   
   .search-btn {
-    padding: 10px 20px;
-    background-color: #333;
+    padding: 0.5rem 1rem;
+    background-color: #ff6f3d;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+  }
+  
+  .hero-svg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 0;
+  }
+  
+  .hero-svg img {
+    width: 100%;
+    height: auto;
+  }
+  
+  @media (max-width: 768px) {
+    .hero-content h1 {
+      font-size: 2rem;
+    }
+  
+    .search-form {
+      flex-direction: column;
+    }
+  
+    .search-form select, .search-form input, .search-btn {
+      width: 100%;
+    }
   }
   
