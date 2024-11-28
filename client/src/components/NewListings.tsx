@@ -31,7 +31,7 @@ const NewListings = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('http://localhost:3000/propiedades');
+      const response = await fetch(`${import.meta.env.VITE_API_RESERVA_FACIL_PROD}/propiedades`);
       const result = await response.json();
       if (result && Array.isArray(result.data)) {
         setData(result.data);
@@ -78,7 +78,7 @@ const NewListings = () => {
               </span>
               {property.imagenes_propiedad && property.imagenes_propiedad.length > 0 ? (
                 <img
-                  src={`http://localhost:3000${property.imagenes_propiedad[0]}`}
+                  src={`${import.meta.env.VITE_API_RESERVA_FACIL_PROD}${property.imagenes_propiedad[0]}`}
                   alt={property.nombre || 'Property Image'}
                   className="new-listings-image"
                 />

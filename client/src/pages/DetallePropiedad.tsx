@@ -11,7 +11,7 @@ const PropertyDetail: React.FC = () => {
 
   const TraerDataPropiedad = async () => {
     try {
-      const response = await fetch(`http://localhost:3000/propiedades/${id}`);
+      const response = await fetch(`${import.meta.env.VITE_API_RESERVA_FACIL_PROD}/propiedades/${id}`);
       const respuesta = await response.json();
       console.log("respuesta es", respuesta.data);
       setData(respuesta.data);
@@ -37,12 +37,12 @@ const PropertyDetail: React.FC = () => {
       </div>
 
       <div className="image-section">
-        {mainImage && <img src={`http://localhost:3000/${mainImage}`} alt="Main" className="main-image" />}
+        {mainImage && <img src={`${import.meta.env.VITE_API_RESERVA_FACIL_PROD}/${mainImage}`} alt="Main" className="main-image" />}
         <div className="gallery">
           {data.imagenes_propiedad?.map((img: string, index: number) => (
             <img
               key={index}
-              src={`http://localhost:3000/${img}`}
+              src={`${import.meta.env.VITE_API_RESERVA_FACIL_PROD}/${img}`}
               alt={`Gallery ${index}`}
               onClick={() => setMainImage(img)}
               className={img === mainImage ? "highlighted" : ""}

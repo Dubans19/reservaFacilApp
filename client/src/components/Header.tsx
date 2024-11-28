@@ -29,7 +29,6 @@ const Header = () => {
   const user = useSelector((state: RootState) => state.user);
 
   const [isOpen, setIsOpen] = useState(false);
-
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -56,7 +55,7 @@ const Header = () => {
           <>
             <p>Hola, {user.nombre} {user.apellido}</p>
             <img
-              src={`http://localhost:3000${user.imagen_perfil}`}
+              src={`${import.meta.env.VITE_API_RESERVA_FACIL_PROD}/${user.imagen_perfil}`}
               alt="Perfil"
               className="profile-img"
               style={{ width: "40px", height: "40px", borderRadius: "50%" }}

@@ -112,7 +112,7 @@ const Dashboards: React.FC = () => {
     });
 
     try {
-      const respuesta = await fetch('http://localhost:3000/crear-propiedad', {
+      const respuesta = await fetch(`${import.meta.env.VITE_API_RESERVA_FACIL_PROD}/crear-propiedad`, {
         method: 'POST',
         body: formData,
       });

@@ -29,12 +29,13 @@ authRouter.post("/registrarse", upload.single('imagenPerfil'), async (req, res) 
         const { nombre, apellido, email, contrasena } = req.body;
 
         const imagenPerfil = req.file
+        
         console.log("imagen perfil es", imagenPerfil)
         if (!imagenPerfil) {
             return res.status(400).send({ mensage: "No hay una imagen subida", status: 400 })
         }
-
-        const imagenPerfilpath = imagenPerfil.path
+      
+        const imagenPerfilpath =  `/uploads/${imagenPerfil.filename}`
         let email_existe = false;
         const existinguser = query(
             collection(db, "registro"),

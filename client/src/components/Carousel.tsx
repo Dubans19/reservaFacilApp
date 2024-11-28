@@ -1,6 +1,6 @@
 // CarouselComponent.jsx
 import { useEffect, useState } from 'react';
-import '../styles/LocationCarousel.scss';
+import '../styles/LOcationCarousel.scss';
 import assets from '../assets/login.jpg';
 
 const CarouselComponent = () => {
