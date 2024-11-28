@@ -3,6 +3,10 @@ import "../styles/Login.scss"
 import { useNavigate } from "react-router-dom"
 import { setLogin } from "../redux/state";
 import { useDispatch } from "react-redux";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
@@ -36,11 +40,14 @@ const LoginPage = () => {
           })
         )
         navigate("/")
+
+      }else if(loggedIn){
+        toast.error('Credenciales incorrectas');
       }
 
-    } catch (err) {
-      alert("fallo")
-      console.log("Login failed", err)
+    } catch (err:any) {
+      toast.error('Ocurrio un error',err);
+
     }
   }
 
@@ -66,6 +73,8 @@ const LoginPage = () => {
         </form>
         <a href="/registrarse">No tienes una cuenta? Registrate Aquí</a>
       </div>
+      <ToastContainer />
+
     </div>
   );
 };

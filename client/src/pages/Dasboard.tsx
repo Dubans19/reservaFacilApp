@@ -165,15 +165,16 @@ const Dashboards: React.FC = () => {
     navigate('/iniciar-sesion', { replace: true }); // Redirige a iniciar sesión
   };
 
+  console.log("municipio es",municipio)
   return (
     <div className="dashboard">
       <aside className="barra-lateral">
         <nav>
           <ul>
-            <li>Panel Principal</li>
+            {/* <li>Panel Principal</li> */}
             <li>Añadir Propiedad</li>
-            <li>Favoritos</li>
-            <li>Reseñas</li>
+            {/* <li>Favoritos</li>
+            <li>Reseñas</li> */}
             <button onClick={cerrarSesion} style={{backgroundColor:"orange",padding:"9px",color:"white",border:"none",cursor:"pointer"}}>Cerrar Sesión</button>
           </ul>
         </nav>
@@ -275,6 +276,8 @@ const Dashboards: React.FC = () => {
             <div className="grupo-formulario">
               <label>Municipio de Antioquia</label>
               <select onChange={(e) => setMunicipio(e.target.value)} value={municipio}>
+              <option value="">Selecciona un municipio</option>
+
               <option value="medellin">Medellín</option>
   <option value="bello">Bello</option>
   <option value="itagui">Itagüí</option>

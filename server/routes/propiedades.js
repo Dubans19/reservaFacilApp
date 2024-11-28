@@ -120,4 +120,36 @@ propiedadesRouter.get("/propiedades/:id_propiedad",async (req,res)=>{
     }
 })
 
+propiedadesRouter.get("/propiedades/municipio/:municipio",async (req,res)=>{
+  try {
+     
+
+      const {municipio}=req.params
+      
+      const collectionRef = collection(db, "propiedades");
+
+      // Filtrar por el ID del documento
+      const q = query(collectionRef, where('municipio', '==', municipio));
+      
+      const querySnapshot = await getDocs(q);
+      
+      if (!querySnapshot.empty) {
+     
+        const documents = querySnapshot.docs.map((doc) => ({
+        
+          ...doc.data()
+        }));
+        res.status(200).json({ data: documents, status: 200 }); 
+      } else {
+          res.status(400).json({ data: "propiedad no encontrada", status: 400 });   
+
+      } 
+
+
+  } catch (error) {
+      res.status(500).json({ mensage:`error ${error}`, status: 500 });   
+
+  }
+})
+
 export default propiedadesRouter;

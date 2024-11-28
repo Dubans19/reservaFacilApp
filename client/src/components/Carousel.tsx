@@ -1,17 +1,36 @@
 // CarouselComponent.jsx
 import { useEffect, useState } from 'react';
 import '../styles/LOcationCarousel.scss';
-import assets from '../assets/login.jpg';
+import assets from '../assets/medellin.jpg';
+import envigado from '../assets/envigado.jpg';
+import { Link } from 'react-router-dom';
+
 
 const CarouselComponent = () => {
   const locations = [
-    { title: 'California', subtitle: '1190 Properties', imageUrl: assets },
-    { title: 'New York', subtitle: '1710 Properties', imageUrl: assets },
-    { title: 'Miami', subtitle: '670 Properties', imageUrl: assets },
-    { title: 'Dhaka', subtitle: '1670 Properties', imageUrl: assets },
-    { title: 'Tokyo', subtitle: '1234 Properties', imageUrl: assets },
-    { title: 'Paris', subtitle: '879 Properties', imageUrl: assets },
-  ];
+    { 
+        title: 'Medellín', 
+        subtitle: 'Propiedades Medellín', 
+        imageUrl: assets, 
+        parametro:"medellin"
+    },
+    { 
+        title: 'Envigado', 
+        subtitle: 'Propiedades Envigado', 
+        imageUrl: envigado,
+        parametro:"envigado"
+
+    },
+    { 
+        title: 'Sabaneta', 
+        subtitle: 'Propiedades Sabaneta', 
+        imageUrl: 'https://pixabay.com/photos/sabaneta-antioquia-colombia-5678901/',
+        parametro:"sabaneta"
+ 
+    },
+  
+];
+
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -46,6 +65,7 @@ const CarouselComponent = () => {
           }}
         >
           {locations.map((location, index) => (
+            <Link to={`/location/${location.parametro}`}>
             <div key={index} className="card">
               <img src={location.imageUrl} alt={location.title} />
               <div className="card-info">
@@ -53,6 +73,7 @@ const CarouselComponent = () => {
                 <div className="card-subtitle">{location.subtitle}</div>
               </div>
             </div>
+            </Link>
           ))}
         </div>
         <button className="carousel-btn next-btn" onClick={handleNext}>❯</button>

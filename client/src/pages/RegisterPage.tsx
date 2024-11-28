@@ -4,6 +4,9 @@ import "../styles/Register.scss";
 import "../assets/uploadPhoto.png";
 import UploadIcon from "@mui/icons-material/Upload";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 // import Alert from '@mui/material/Alert';
 // import CheckIcon from '@mui/icons-material/Check';
 const RegisterPage = () => {
@@ -61,11 +64,14 @@ const RegisterPage = () => {
             if (response.ok) {
                 // setmostrarAlerta(true)
                 navigate("/iniciar-sesion")
+                toast.success("Registro hecho exitosamente")
                 
             }
 
         } catch (error) {
             console.log("registration fallo", error)
+            toast.error("Registro fallo")
+
 
         }
 
@@ -144,7 +150,7 @@ const RegisterPage = () => {
                 </form>
                 <a href="/iniciar-sesion">Ya tienes una cuenta? Inicia sesion aquí</a>
             </div>
-   
+            <ToastContainer />
         </div>
     );
 };

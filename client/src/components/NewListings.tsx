@@ -22,6 +22,7 @@ interface Property {
   banos: string;
   id_propietario: string;
   direccion: string;
+  municipio:string;
   habitaciones: string;
   negocio: string;
 }
@@ -87,7 +88,7 @@ const NewListings = () => {
               )}
               <div className="new-listings-info">
                 <h2 className="property-title">{property.nombre}</h2>
-                <p className="location">{property.direccion}</p>
+                <p className="location">{property.municipio}</p>
                 <div className="details">
                   <span>
                     <FaRulerCombined /> {property.area} M2

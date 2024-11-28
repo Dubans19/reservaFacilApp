@@ -41,10 +41,10 @@ const Header = () => {
         </Link>
       </div>
       <ul className={`nav-links ${isOpen ? "open" : ""}`}>
-        <li><a href="#">Inicio</a></li>
+        {/* <li><a href="#">Inicio</a></li>
         <li><a href="#">Lista de propiedades</a></li>
         <li><a href="#">Páginas</a></li>
-        <li><a href="#">Blog</a></li>
+        <li><a href="#">Blog</a></li> */}
       </ul>
       <div className="nav-buttons">
         {user === null ? (
