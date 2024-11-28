@@ -51,6 +51,8 @@ const Dashboards: React.FC = () => {
   const [garajes, setGarajes] = useState('');
   const [pisos, setPisos] = useState('');
   const [direccion, setDireccion] = useState('');
+  const [municipio, setMunicipio] = useState('');
+
   const [mapa, setMapa] = useState('');
   // const [mensaje, setMensaje] = useState('');
 
@@ -64,6 +66,7 @@ const Dashboards: React.FC = () => {
     habitaciones,
     garajes,
     direccion,
+    municipio,
     mapa,
   ];
 
@@ -106,6 +109,7 @@ const Dashboards: React.FC = () => {
     formData.append('garages', garajes);
     formData.append('pisos', pisos);
     formData.append('direccion', direccion);
+    formData.append('municipio', municipio);
     formData.append('map_location', mapa);
     imagenes.forEach((imagen) => {
       formData.append(`imagenes`, imagen);
@@ -140,6 +144,7 @@ const Dashboards: React.FC = () => {
     setHabitaciones('');
     setGarajes('');
     setPisos('');
+    setMunicipio('');
     setDireccion('');
     setMapa('');
     setImagenes([]);
@@ -169,7 +174,7 @@ const Dashboards: React.FC = () => {
             <li>Añadir Propiedad</li>
             <li>Favoritos</li>
             <li>Reseñas</li>
-            <button onClick={cerrarSesion}>Cerrar Sesión</button>
+            <button onClick={cerrarSesion} style={{backgroundColor:"orange",padding:"9px",color:"white",border:"none",cursor:"pointer"}}>Cerrar Sesión</button>
           </ul>
         </nav>
       </aside>
@@ -266,6 +271,23 @@ const Dashboards: React.FC = () => {
                 value={pisos}
                 onChange={(e) => setPisos(e.target.value)}
               />
+            </div>
+            <div className="grupo-formulario">
+              <label>Municipio de Antioquia</label>
+              <select onChange={(e) => setMunicipio(e.target.value)} value={municipio}>
+              <option value="medellin">Medellín</option>
+  <option value="bello">Bello</option>
+  <option value="itagui">Itagüí</option>
+  <option value="envigado">Envigado</option>
+  <option value="la_estrella">La Estrella</option>
+  <option value="sabaneta">Sabaneta</option>
+  <option value="rionegro">Rionegro</option>
+  <option value="la_ceja">La Ceja</option>
+  <option value="cocorna">Cocorná</option>
+  <option value="guarne">Guarne</option>
+  <option value="guatape">Guatapé</option>
+  <option value="el_peñol">El Peñol</option>
+              </select>
             </div>
             <div className="grupo-formulario">
               <label>Dirección</label>

@@ -28,7 +28,7 @@ const upload = multer({ storage });
 propiedadesRouter.post("/crear-propiedad", upload.array("imagenes", 10), async (req, res) => {
     try {
       const uuid = uuidv4().slice(0, 10);
-      const { id_propietario,nombre, descripcion, categoria, negocio, precio, area, banos, habitaciones, garages, pisos, direccion, map_location } = req.body;
+      const { id_propietario,nombre, descripcion, categoria, negocio, precio, area, banos, habitaciones, garages, pisos, direccion,municipio, map_location } = req.body;
   
       // Crear un array con las rutas relativas de las imágenes
       const imageUrls = req.files.map((file) => `/uploads/${file.filename}`);
@@ -48,6 +48,7 @@ propiedadesRouter.post("/crear-propiedad", upload.array("imagenes", 10), async (
         garages: garages,
         pisos: pisos,
         direccion: direccion,
+        municipio:municipio,
         map_location: map_location,
         imagenes_propiedad: imageUrls,  // Guardamos las rutas relativas de las imágenes
         fecha_creacion: new Date(),

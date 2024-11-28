@@ -1,6 +1,7 @@
 import React from "react";
 import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 import "../styles/Footer.scss";
+import { Link } from "react-router-dom";
 
 const Footer: React.FC = () => {
   return (
@@ -32,33 +33,33 @@ const Footer: React.FC = () => {
       <div className="footer-section links">
         <h3>Links</h3>
         <ul>
-          <li><a href="#">Inicio</a></li>
-          <li><a href="#">Membership</a></li>
+          <Link to="/">Inicio</Link>
+          {/* <li><a href="#">Membership</a></li>
           <li><a href="#">About Company</a></li>
           <li><a href="#">Blog</a></li>
           <li><a href="#">Explore Careers</a></li>
-          <li><a href="#">Pricing</a></li>
-          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">Pricing</a></li> */}
+          
         </ul>
       </div>
       <div className="footer-section legal">
         <h3>Legal</h3>
         <ul>
-          <li><a href="#">Terms & conditions</a></li>
+          {/* <li><a href="#">Terms & conditions</a></li>
           <li><a href="#">Cookie</a></li>
-          <li><a href="#">Privacy policy</a></li>
+          <li><a href="#">Privacy policy</a></li> */}
           <li><a href="#">FAQ's</a></li>
         </ul>
       </div>
       <div className="footer-section new-listing">
-        <h3>New Listing</h3>
+        <h3>Nuevas Propiedades</h3>
         <ul>
-          <li><a href="#">Buy Apartments</a></li>
-          <li><a href="#">Buy Condos</a></li>
-          <li><a href="#">Rent Houses</a></li>
-          <li><a href="#">Rent Industrial</a></li>
-          <li><a href="#">Buy Villas</a></li>
-          <li><a href="#">Rent Office</a></li>
+          <li><a href="#">Apartmentos</a></li>
+          <li><a href="#">Casas</a></li>
+          <li><a href="#">Fincas</a></li>
+
+
+         
         </ul>
       </div>
     </footer>
