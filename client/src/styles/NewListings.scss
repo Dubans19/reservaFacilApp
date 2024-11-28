@@ -1,0 +1,129 @@
+.new-listings-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #fdf4ee;
+  }
+  
+  .new-listings-title {
+    font-size: 2.5em;
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .highlight {
+    color: #ff5a5f;
+    text-decoration: underline;
+  }
+  
+  .new-listings-subtitle {
+    color: #666;
+    font-size: 1.1em;
+    margin-bottom: 30px;
+  }
+  
+  .new-listings-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-items: center;
+  }
+  
+  @media (max-width: 992px) {
+    .new-listings-cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .new-listings-cards {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .new-listings-card {
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 320px;
+    position: relative;
+  }
+  
+  .new-listings-card:hover {
+    transform: scale(1.03);
+  }
+  
+  .status {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 8px 15px;
+    color: #fff;
+    font-size: 0.9em;
+    border-radius: 16px;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .for-rent {
+    background-color: #ff5a5f;
+  }
+  
+  .for-sale {
+    background-color: #4caf50;
+  }
+  
+  .new-listings-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .new-listings-info {
+    padding: 15px;
+  }
+  
+  .property-title {
+    font-size: 1.4em;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none; /* Asegura que no haya subrayados */
+  }
+  
+  .location {
+    font-size: 0.95em;
+    color: #888;
+    margin-bottom: 15px;
+    text-decoration: none; /* Asegura que no haya subrayados */
+  }
+  
+  .details {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 15px;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .details span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .price {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none; /* Asegura que no haya subrayados */
+  }
+  

@@ -4,11 +4,11 @@ import "../styles/Register.scss";
 import "../assets/uploadPhoto.png";
 import UploadIcon from "@mui/icons-material/Upload";
 import { useNavigate } from "react-router-dom";
-import Alert from '@mui/material/Alert';
-import CheckIcon from '@mui/icons-material/Check';
+// import Alert from '@mui/material/Alert';
+// import CheckIcon from '@mui/icons-material/Check';
 const RegisterPage = () => {
     const navigate = useNavigate()
-    const [mostrarAlerta, setmostrarAlerta] = useState(false)
+    // const [mostrarAlerta, setmostrarAlerta] = useState(false)
     const [formData, setformData] = useState({
         nombre: "",
         apellido: "",

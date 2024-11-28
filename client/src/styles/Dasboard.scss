@@ -1,0 +1,185 @@
+.dashboard {
+    display: flex;
+    height: 100vh;
+  
+    .barra-lateral {
+      width: 250px;
+      background-color: #1e1e1e; /* Fondo oscuro para el sidebar */
+      color: #ffffff; /* Texto blanco */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: fixed;
+      height: 100%;
+      overflow-y: auto;
+      padding: 1rem;
+  
+      nav {
+        ul {
+          list-style: none;
+          padding: 0;
+  
+          li {
+            margin: 15px 0;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            border-radius: 5px;
+            color: #ffffff;
+  
+            &:hover {
+              background-color: #ff6f3c; /* Naranja vibrante al pasar el cursor */
+              color: #ffffff;
+            }
+          }
+        }
+      }
+    }
+  
+    .contenido {
+      margin-left: 250px;
+      flex: 1;
+      padding: 2rem;
+      overflow-y: auto;
+      background-color: #fdf5f0; /* Fondo claro suave */
+  
+      h1 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        color: #1e1e1e; /* Títulos oscuros */
+      }
+  
+      .mensaje {
+        color: #ff6f3c; /* Mensajes destacados en naranja */
+        margin-bottom: 1rem;
+      }
+  
+      form {
+        section {
+          margin-bottom: 2rem;
+          background-color: #ffffff;
+          padding: 1.5rem;
+          border-radius: 8px;
+          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  
+          h3 {
+            margin-bottom: 1rem;
+            color: #1e1e1e; /* Títulos oscuros */
+            font-size: 1.3rem;
+          }
+  
+          .grupo-formulario {
+            margin-bottom: 1rem;
+  
+            label {
+              display: block;
+              font-size: 0.9rem;
+              color: #7a7a7a; /* Texto gris */
+              margin-bottom: 0.5rem;
+            }
+  
+            input,
+            select,
+            textarea {
+              width: 100%;
+              padding: 0.5rem;
+              border: 1px solid #d1d1d1;
+              border-radius: 5px;
+              font-size: 0.9rem;
+              color: #1e1e1e;
+  
+              &:focus {
+                outline: none;
+                border-color: #ff6f3c; /* Naranja en foco */
+                box-shadow: 0 0 0 2px rgba(255, 111, 60, 0.3);
+              }
+            }
+  
+            textarea {
+              resize: vertical;
+              min-height: 80px;
+            }
+          }
+        }
+  
+        .boton-crear-propiedad {
+          display: inline-block;
+          background-color: #ff6f3c; /* Fondo naranja */
+          color: #ffffff;
+          padding: 0.7rem 1.5rem;
+          font-size: 1rem;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          text-align: center;
+          font-weight: bold;
+  
+          &:hover {
+            background-color: #e55a2a; /* Naranja más oscuro al pasar el cursor */
+          }
+        }
+      }
+  
+      .seccion-subida {
+        .boton-upload {
+          display: inline-flex;
+          align-items: center;
+          background-color: #10b981; /* Verde fresco para botones secundarios */
+          color: #ffffff;
+          padding: 0.6rem 1rem;
+          font-size: 0.9rem;
+          border-radius: 5px;
+          cursor: pointer;
+          margin-bottom: 1rem;
+  
+          svg {
+            margin-right: 0.5rem;
+          }
+  
+          &:hover {
+            background-color: #059669; /* Verde más oscuro */
+          }
+        }
+  
+        .vista-previa-imagenes {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 1rem;
+          margin-top: 1rem;
+  
+          .contenedor-imagen {
+            position: relative;
+            width: 100px;
+            height: 100px;
+  
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              border-radius: 5px;
+              border: 1px solid #d1d5db;
+            }
+  
+            button {
+              position: absolute;
+              top: -10px;
+              right: -10px;
+              background-color: #ff6f3c; /* Naranja para eliminar imagen */
+              color: #ffffff;
+              border: none;
+              border-radius: 50%;
+              font-size: 0.8rem;
+              width: 20px;
+              height: 20px;
+              cursor: pointer;
+  
+              &:hover {
+                background-color: #e55a2a; /* Naranja más oscuro */
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  

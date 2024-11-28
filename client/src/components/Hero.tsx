@@ -1,8 +1,8 @@
-import React from "react";
 import '../styles/Hero.scss';
-import SearchBar from "./SearchBar";
+// import SearchBar from "./SearchBar";
 import BuildingsSVG  from "../assets/ils_08.svg"
-import Header from "./Header";
+// import Header from "./Header";
+// import LocationCarousel from "./Carousel";
 
 const Hero = () => {
     return (
@@ -27,6 +27,7 @@ const Hero = () => {
           <div className="hero-svg">
             <img src={BuildingsSVG} alt="Buildings and houses" />
           </div>
+  
         </section>
       );
 };

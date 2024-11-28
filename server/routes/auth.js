@@ -11,6 +11,7 @@ import {
     getDocs,
 } from "firebase/firestore";
 import { query, where } from "firebase/firestore";
+import { v4 as uuidv4 } from 'uuid';
 
 const authRouter = express.Router();
 const storage = multer.diskStorage({
@@ -56,8 +57,9 @@ authRouter.post("/registrarse", upload.single('imagenPerfil'), async (req, res) 
         // }
         const salt = await bcrypt.genSalt();
         const hashedpassword = await bcrypt.hash(contrasena, salt);
-
+        const uuid = uuidv4().slice(0, 10);
         const docRef = await addDoc(collection(db, "registro"), {
+            id_usuario:uuid,
             nombre: nombre,
             apellido: apellido,
             email: email,
