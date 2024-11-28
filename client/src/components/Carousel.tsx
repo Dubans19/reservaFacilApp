@@ -4,6 +4,7 @@ import '../styles/LOcationCarousel.scss';
 import assets from '../assets/medellin.jpg';
 import envigado from '../assets/envigado.jpg';
 import sabaneta from '../assets/sabaneta.jpg';
+import rionegro from '../assets/rionegro.jpg';
 
 import { Link } from 'react-router-dom';
 
@@ -30,6 +31,13 @@ const CarouselComponent = () => {
         parametro:"sabaneta"
  
     },
+    { 
+      title: 'Rionegro', 
+      subtitle: 'Propiedades Rionegro', 
+      imageUrl:rionegro,
+      parametro:"rionegro"
+
+  },
   
 ];
 
