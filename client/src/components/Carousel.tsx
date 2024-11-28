@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import '../styles/LOcationCarousel.scss';
 import assets from '../assets/medellin.jpg';
 import envigado from '../assets/envigado.jpg';
+import sabaneta from '../assets/sabaneta.jpg';
+
 import { Link } from 'react-router-dom';
 
 
@@ -24,7 +26,7 @@ const CarouselComponent = () => {
     { 
         title: 'Sabaneta', 
         subtitle: 'Propiedades Sabaneta', 
-        imageUrl: 'https://pixabay.com/photos/sabaneta-antioquia-colombia-5678901/',
+        imageUrl:sabaneta,
         parametro:"sabaneta"
  
     },
