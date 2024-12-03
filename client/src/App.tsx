@@ -1,5 +1,5 @@
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route} from 'react-router-dom'
 import './App.css'
 import HomePage from './pages/HomePage'
 import RegisterPage from './pages/RegisterPage'
@@ -10,11 +10,15 @@ import PropertyDetail from './pages/DetallePropiedad'
 import Footer from './components/Footer'
 import ProtectedRoute from './pages/ProtectedRoute'
 import LocationPropiedades from './components/LocationPropiedades'
+import UserProperties from './pages/PropiedadesUsuario'
 
 function App() {
+
+
   return (
     <div>
       <BrowserRouter>
+
         <Header />
 
         <Routes>
@@ -30,8 +34,10 @@ function App() {
                 <Dashboards />
               </ProtectedRoute>
             }
-          />
+          >          <Route path='mis-propiedades/:id' element={<UserProperties />} />
+          </Route>
           <Route path='propiedad-detalle/:id' element={<PropertyDetail />} />
+
           <Route path='/location/:municipio/propiedad-detalle/:id' element={<PropertyDetail />} />
 
 

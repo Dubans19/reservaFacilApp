@@ -28,15 +28,20 @@ interface Propertys {
 }
 
 const LocationPropiedades: React.FC = () => {
-    const [data, setData] = useState<Propertys[]>([])
+    const [data, setData] = useState<Propertys[]> ([])
 
     const { municipio } = useParams<{ municipio: string }>();
+    console.log("municipio es",municipio)
     const TraerDataPropiedad = async () => {
         try {
             const response = await fetch(`${import.meta.env.VITE_API_RESERVA_FACIL_PROD}/propiedades/municipio/${municipio}`);
             const respuesta = await response.json();
             console.log("respuesta municipio es", respuesta.data);
-            setData(respuesta.data);
+            if(respuesta.data.length >0){
+                setData(respuesta.data); 
+            }
+          
+         
         } catch (error) {
             console.error("Error al traer los datos de la propiedad:", error);
         }
@@ -46,16 +51,18 @@ const LocationPropiedades: React.FC = () => {
         TraerDataPropiedad();
     }, [municipio]);
 
-    const primerasImagenes = data.map(propiedad =>
-        propiedad.imagenes_propiedad?.[0] || 'Sin imagen disponible'
-    );
-    console.log("todas las imagenes", primerasImagenes)
+    console.log("data nueva es",data)
+    // const primerasImagenes = data.map(propiedad =>
+    //     propiedad.imagenes_propiedad?.[0] || 'Sin imagen disponible'
+    // );
+    // console.log("todas las imagenes", primerasImagenes)
 
     const [filters, setFilters] = useState({
         keyword: '',
         location: '',
         minPrice: 0,
-        maxPrice: 50000,
+        municipio:'',
+        maxPrice: 200000000,
     });
 
     const [currentPage, setCurrentPage] = useState<number>(1);
@@ -65,21 +72,24 @@ const LocationPropiedades: React.FC = () => {
         setFilters({ ...filters, [e.target.name]: e.target.value });
     };
 
-    const filteredProperties = data.filter((property) => {
+  
+
+    const filteredProperties = data.length > 0 ? data.filter((property) => {
         const keywordMatch = filters.keyword
             ? property.nombre.toLowerCase().includes(filters.keyword.toLowerCase())
             : true;
         const locationMatch = filters.location
-            ? property.municipio.toLowerCase() === filters.location.toLowerCase()
+            ? property.municipio.toLowerCase() === filters.municipio.toLowerCase()
             : true;
         const priceMatch =
             parseInt(property.precio.replace('$', '')) >= filters.minPrice &&
             parseInt(property.precio.replace('$', '')) <= filters.maxPrice;
 
         return keywordMatch && locationMatch && priceMatch;
-    });
+    }):[];
 
     const totalPages = Math.ceil(filteredProperties.length / itemsPerPage);
+
 
     const displayedProperties = filteredProperties.slice(
         (currentPage - 1) * itemsPerPage,
@@ -102,7 +112,7 @@ const LocationPropiedades: React.FC = () => {
                         name="keyword"
                         value={filters.keyword}
                         onChange={handleFilterChange}
-                        placeholder="e.g., villa, apartment"
+                        placeholder="Casa, Finca"
                     />
                 </div>
                 <div className="filter-group">
@@ -110,11 +120,11 @@ const LocationPropiedades: React.FC = () => {
                     <select
                         id="location"
                         name="location"
-                        value={filters.location}
+                        value={filters.municipio}
                         onChange={handleFilterChange}
                     >
                         <option value="">All Locations</option>
-                        <option value="Medellín">Medellín</option>
+                        <option value="medellin">Medellín</option>
                         <option value="Other City">Other City</option>
                     </select>
                 </div>

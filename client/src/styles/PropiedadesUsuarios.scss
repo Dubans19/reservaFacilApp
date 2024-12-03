@@ -1,0 +1,105 @@
+.user-properties {
+    font-family: "Arial", sans-serif;
+    padding: 20px;
+    background-color: #fdf5f2;
+  }
+  
+  .properties-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .properties-table th {
+    background: black;
+    color: white;
+    text-align: left;
+    padding: 10px;
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+  
+  .properties-table td {
+    padding: 15px;
+    vertical-align: middle;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .property-details {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .property-details img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+  }
+  
+  .property-title {
+    font-size: 16px;
+    margin: 0;
+  }
+  
+  .property-location {
+    color: gray;
+    font-size: 14px;
+  }
+  
+  .property-price {
+    font-weight: bold;
+    margin-top: 5px;
+  }
+  
+  .status {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .status.active {
+    background-color: #d4f8e8;
+    color: #38a169;
+  }
+  
+  .status.pending {
+    background-color: #ffe4e6;
+    color: #e53e3e;
+  }
+  
+  .status.processing {
+    background-color: #fef3c7;
+    color: #d97706;
+  }
+  
+  .actions button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .actions button:first-child {
+    background-color: #3182ce;
+    color: white;
+  }
+  
+  .actions button:last-child {
+    background-color: #e53e3e;
+    color: white;
+  }
+  
+  .no-results {
+    text-align: center;
+    color: gray;
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  
