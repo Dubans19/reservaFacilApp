@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "../styles/PropiedadDetalle.scss";
+import WhatsappButton from "../components/WhatsappButton";
 
 const PropertyDetail: React.FC = () => {
   const [data, setData] = useState<any | null>(null); // Cambiar el estado inicial a `null`
@@ -71,10 +72,9 @@ const PropertyDetail: React.FC = () => {
 
       <div className="agent-section">
         <h3>Contactar al Agente</h3>
-        <div className="agent-info">
-          <p>{data.agente?.nombre}</p>
-          <p>Email: {data.agente?.email}</p>
-          <p>Teléfono: {data.agente?.telefono}</p>
+        <div className="agent-info">        
+          <p>Teléfono / WhatsApp: {data.contacto_propietario}</p>
+          <WhatsappButton contacto={data.contacto_propietario}/>
         </div>
       </div>
     </div>

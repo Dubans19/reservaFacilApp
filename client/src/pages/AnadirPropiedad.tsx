@@ -296,6 +296,7 @@ export const AnadirPropiedad = () => {
               <input
                 type="text"
                 placeholder="Numero de celular o WhatsApp"
+                pattern="^\d{10}$"
                 value={contacto}
                 onChange={(e) => setContacto(e.target.value)}
               />
