@@ -1,6 +1,5 @@
 import { FaWhatsapp } from 'react-icons/fa';  // Importa el ícono de WhatsApp de react-icons
 import '../styles/WhatsappButton.scss';  // Asegúrate de tener un archivo CSS para la personalización
-import { useSelector } from 'react-redux';
 
 const WhatsappButton = ({contacto}:{contacto:string}) => {
   const whatsappNumber =`+57${contacto}`;  // Cambia este número por tu número de WhatsApp
