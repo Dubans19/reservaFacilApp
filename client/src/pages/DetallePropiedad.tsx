@@ -51,12 +51,21 @@ const PropertyDetail: React.FC = () => {
         </div>
       </div>
 
+
       <div className="property-overview">
+        
         <h2>Resumen de la Propiedad</h2>
         <div className="overview-grid">
           <p>Habitaciones: {data.habitaciones}</p>
           <p>Baños: {data.banos}</p>
           <p>Tipo: {data.categoria}</p>
+        </div>
+      </div>
+      <div className="property-overview">
+        
+        <h2>Descripción</h2>
+        <div className="overview-grid">
+          <p> {data.descripcion}</p>
         </div>
       </div>
 

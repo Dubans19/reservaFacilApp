@@ -49,7 +49,8 @@ export const AnadirPropiedad = () => {
     const [pisos, setPisos] = useState('');
     const [direccion, setDireccion] = useState('');
     const [municipio, setMunicipio] = useState('');
-  
+    const [contacto, setContacto] = useState('');
+
     const [mapa, setMapa] = useState('');
     // const [mensaje, setMensaje] = useState('');
   
@@ -64,7 +65,7 @@ export const AnadirPropiedad = () => {
       garajes,
       direccion,
       municipio,
-      mapa,
+      contacto
     ];
   
     const botonHabilitado =
@@ -108,6 +109,7 @@ export const AnadirPropiedad = () => {
       formData.append('direccion', direccion);
       formData.append('municipio', municipio);
       formData.append('map_location', mapa);
+      formData.append('contacto',contacto);
       imagenes.forEach((imagen) => {
         formData.append(`imagenes`, imagen);
       });
@@ -144,6 +146,7 @@ export const AnadirPropiedad = () => {
       setMunicipio('');
       setDireccion('');
       setMapa('');
+      setContacto('');
       setImagenes([]);
     };
   return (
@@ -275,6 +278,26 @@ export const AnadirPropiedad = () => {
                 placeholder="Ejemplo: Coordenadas"
                 value={mapa}
                 onChange={(e) => setMapa(e.target.value)}
+              />
+            </div>
+          </section>
+
+
+
+
+
+
+
+          <section>
+            <h3>Contacto</h3>
+           
+            <div className="grupo-formulario">
+              <label>Número Contacto</label>
+              <input
+                type="text"
+                placeholder="Numero de celular o WhatsApp"
+                value={contacto}
+                onChange={(e) => setContacto(e.target.value)}
               />
             </div>
           </section>
